@@ -1,22 +1,24 @@
 languageCode = "zh-cn"
 languageName = "简体中文"
 weight = 4
-title = "Blowfish"
+title = "zzx的主页"
 
 [params]
   displayName = "简体中文"
   isoCode = "zh-cn"
   rtl = false
   dateFormat = "2006-01-02"
-  logo = "img/blowfish_logo_transparent.png"
-  description = "一个强大、轻量级的 Hugo 主题。"
+  logo = "/img/zzx_icon.svg"
+  description = "zzx的个人主页"
 
 [params.author]
-  name = "Blowfish"
-  image = "img/blowfish_logo.png"
-  headline = "一个强大、轻量级的 Hugo 主题。"
-  bio = "一个强大、轻量级的 Hugo 主题。"
+  name = "Zixuan Zhu"
+  image = "profile.jpg"
+  headline = "欢迎来到zzx的主站"
+  bio = "作者暂未想出bio"
   links = [
-    { x-twitter = "https://twitter.com/burufugu" },
-    { github = "https://github.com/nunocoracao/blowfish" },
+    { wechat = "/img/wechat_QR.jpg" },
+    { github = "https://github.com/zzx060827" },
+    { email = "mailto:zzx060827@stu.pku.edu.cn" },
   ]
+

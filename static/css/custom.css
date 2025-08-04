@@ -1,0 +1,26 @@
+/* --- 用于实现暗色模式下 Logo 切换 --- */
+
+/* 1. 默认情况下（浅色模式），图标正常显示 */
+.header__logo img {
+    border-radius: 50% !important; /* 保留之前的圆形图标样式 */
+    display: inline-block; /* 确保图片可见 */
+}
+
+/* 2. 当切换到暗色模式时 (html 标签会带上 .dark class) */
+html.dark .header__logo {
+    /* 2.1. 我们将把暗色图标作为容器的背景图 */
+    background-image: url('/img/zzx_icon_dark.jpg');
+    background-size: contain;      /* 确保背景图适应容器大小 */
+    background-repeat: no-repeat;  /* 背景图不重复 */
+    background-position: center;   /* 背景图居中 */
+    
+    /* 2.2. 给容器一个固定的尺寸，请根据你的图标大小调整 */
+    display: inline-block;
+    width: 32px;  /* <--- 可能需要修改 */
+    height: 32px; /* <--- 可能需要修改 */
+}
+
+/* 3. 在暗色模式下，隐藏掉原来的 <img> 元素，只显示背景图 */
+html.dark .header__logo img {
+    display: none;
+}

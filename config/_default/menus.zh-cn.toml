@@ -11,45 +11,64 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
-  name = "文档"
-  pageRef = "docs"
+  name = "主页"
+  pageRef = "/"
   weight = 10
 
 [[main]]
-  name = "简码"
-  pageRef = "docs/shortcodes"
+  name = "文章"
+  pageRef = "posts"
   weight = 15
 
+  
+# “分类”本身作为父菜单，不需要链接，所以没有 url 或 pageRef
 [[main]]
-  name = "示例"
+  name = "分类"
   weight = 20
 
+# 下拉菜单项使用 url 指向分类页面
 [[main]]
-  name = "功能示例"
-  parent = "示例"
-  pageRef = "samples"
+  name = "摄影"
+  parent = "分类"
+  url = "/categories/摄影/" # <-- 修改这里
   weight = 16
 
 [[main]]
-  name = "模板示例"
-  parent = "示例"
-  pageRef = "examples"
+  name = "旅行"
+  parent = "分类"
+  url = "/categories/旅行/" # <-- 修改这里
   weight = 30
 
 [[main]]
-  name = "部署指南"
-  parent = "示例"
-  pageRef = "guides"
+  name = "生活"
+  parent = "分类"
+  url = "/categories/生活/" # <-- 修改这里
   weight = 40
 
 [[main]]
-  name = "用户列表"
-  pageRef = "users"
-  weight = 90
+  name = "for PKUers"
+  weight = 100
 
 [[main]]
-  name = "周边"
-  url = "https://www.teepublic.com/user/blowfish-store/t-shirts"
+  name = "课程测评"
+  parent = "for PKUers"
+  url = "/categories/课程测评/" # <-- 修改这里
+  weight = 110
+
+[[main]]
+  name = "课程资料"
+  parent = "for PKUers"
+  url = "/categories/课程资料/" # <-- 修改这里
+  weight = 120 
+
+
+[[main]]
+  name = "about me"
+  pageRef = "about"
+  weight = 11
+
+[[main]]
+  name = "联系我"
   weight = 100
 
 #[[main]]
@@ -57,11 +76,6 @@
 #  pageRef = "pagTest"
 #  weight = 1000
 
-[[main]]
-  identifier = "twitter"
-  pre = "x-twitter"
-  url = "https://twitter.com/burufugu"
-  weight = 200
 
 #[[main]]
 #  identifier = "mastodon"
@@ -69,10 +83,35 @@
 #  weight = 300
 #  url = "https://masto.ai/@blowfish"
 
+
+
+[[main]]
+  parent = "联系我"
+  pre = "wechat"
+  url = "/img/wechat_QR.jpg"
+  weight = 350
+
+
+[[main]]
+  parent = "联系我" 
+  
+  # 给它一个唯一的 identifier
+  identifier = "email_contact"
+  
+  # 使用 "mail" 关键字来显示信封图标
+  pre = "email"
+  
+  # 你的邮箱地址，注意前面的 "mailto:"
+  url = "mailto:zzx060827@stu.pku.edu.cn"
+  
+  # 排序
+  weight = 390
+
 [[main]]
   identifier = "github"
+  parent = "联系我"
   pre = "github"
-  url = "https://github.com/nunocoracao/blowfish"
+  url = "https://github.com/zzx060827"
   weight = 400
 
 
