@@ -52,13 +52,13 @@
 [[main]]
   name = "课程测评"
   parent = "for PKUers"
-  url = "/categories/课程测评/" # <-- 修改这里
+  url = "/reviews/"
   weight = 110
 
 [[main]]
   name = "课程资料"
   parent = "for PKUers"
-  url = "/categories/课程资料/" # <-- 修改这里
+  url = "/课程资料" # <-- 修改这里
   weight = 120 
 
 

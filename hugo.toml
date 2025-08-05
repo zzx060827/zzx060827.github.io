@@ -10,3 +10,11 @@ theme = "blowfish"
 [params]
   [params.comments]
     provider = "cactus"
+
+# hugo.toml
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  # --- 这是我们为课程评测新增的分类 ---
+  course_type = "course_types" # 新增这一行
