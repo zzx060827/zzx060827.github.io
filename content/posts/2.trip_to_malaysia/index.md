@@ -1,6 +1,6 @@
 ---
 title: "记游马来西亚-1"
-date: 2025-08-04
+date: 2025-08-05
 draft: false
 layout: single
 categories: ["旅行", "摄影"]

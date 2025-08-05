@@ -1,6 +1,6 @@
 ---
 title: "Why Web?"
-date: 2025-08-04
+date: 2025-08-05
 draft: false
 description: "为什么要建个人网站"
 tags: ["生活"]
