@@ -183,14 +183,29 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   # true or false
   enabled = true
   # "utterances", "disqus", "giscus"
-  provider = "disqus"
+  provider = "giscus"
   # blowfish uses the "session" theme by default
   theme = "github-light"
   # blowfish uses "github-dark" theme for dark mode
   darkTheme = "github-dark"
 
-[comments.disqus]
-  # 请替换为您的 Disqus shortname
-  shortname = "your-disqus-shortname"
+[comments.giscus]
+  # 请替换为您的 GitHub 用户名/仓库名
+  repo = "zzx060827/zzx060827.github.io"
+  repoId = ""
+  category = "General"
+  categoryId = ""
+  mapping = "pathname"
+  strict = "0"
+  reactionsEnabled = "1"
+  emitMetadata = "0"
+  inputPosition = "bottom"
+  lang = "zh-CN"
+  mapping = "pathname"
+  strict = "0"
+  reactionsEnabled = "1"
+  emitMetadata = "0"
+  inputPosition = "bottom"
+  lang = "zh-CN"
 
 

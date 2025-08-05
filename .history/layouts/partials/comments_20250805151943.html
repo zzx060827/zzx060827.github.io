@@ -19,40 +19,6 @@
                   async>
           </script>
         </div>
-
-        <!-- 主题切换支持 -->
-        <script>
-          // 监听主题变化
-          function updateGiscusTheme() {
-            const isDark = document.documentElement.classList.contains('dark');
-            const theme = isDark ? '{{ .Site.Params.comments.darkTheme | default "github-dark" }}' : '{{ .Site.Params.comments.theme | default "github-light" }}';
-
-            const giscusFrame = document.querySelector('iframe.giscus-frame');
-            if (giscusFrame) {
-              giscusFrame.contentWindow.postMessage({
-                giscus: {
-                  setConfig: {
-                    theme: theme
-                  }
-                }
-              }, 'https://giscus.app');
-            }
-          }
-
-          // 监听主题切换
-          const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-              if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                updateGiscusTheme();
-              }
-            });
-          });
-
-          observer.observe(document.documentElement, {
-            attributes: true,
-            attributeFilter: ['class']
-          });
-        </script>
       </div>
     {{- end -}}
   {{- else if eq .Site.Params.comments.provider "disqus" -}}

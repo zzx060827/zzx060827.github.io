@@ -4,7 +4,7 @@
 {{- $showThumbnail := .Get "showThumbnail" | default true -}}
 {{- $githubColors := .Site.Data.repoColors -}}
 {{- $githubData := dict -}}
-{{- with resources.GetRemote $githubURL -}}
+{{- with try (resources.GetRemote $githubURL) -}}
   {{- with .Err -}}
     {{- warnf "github shortcode: failed to fetch remote resource from %q: %s" $githubURL $.Position -}}
   {{- else with .Value -}}
