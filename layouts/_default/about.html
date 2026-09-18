@@ -1,0 +1,102 @@
+{{ define "main" }}
+  <article class="academic-profile" aria-labelledby="profile-name">
+    <header class="academic-profile__hero">
+      <div class="academic-profile__identity">
+        <p class="academic-profile__eyebrow">About / Academic Profile</p>
+        <h1 id="profile-name">{{ .Params.english_name }}</h1>
+        <p class="academic-profile__chinese-name">{{ .Params.name }}</p>
+        <p class="academic-profile__role">{{ .Params.role }}</p>
+        <p class="academic-profile__intro">{{ .Params.intro }}</p>
+        <nav class="academic-profile__links" aria-label="联系方式">
+          <a href="mailto:{{ .Params.email }}">Email</a>
+          <a href="{{ .Params.github }}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <span>{{ .Params.location }}</span>
+        </nav>
+      </div>
+      <div class="academic-profile__mark" aria-hidden="true">
+        {{ $profileMark := resources.Get "img/zzx_mark.png" }}
+        <img src="{{ $profileMark.RelPermalink }}" alt="">
+        <span>Artificial Intelligence</span>
+      </div>
+    </header>
+
+    <div class="academic-profile__rule"></div>
+
+    <div class="academic-profile__layout">
+      <div class="academic-profile__main">
+        <section class="academic-profile__section" aria-labelledby="research-heading">
+          <div class="academic-profile__section-heading">
+            <p>01</p>
+            <h2 id="research-heading">研究方向 <span>Research Interests</span></h2>
+          </div>
+          <div class="academic-profile__tags">
+            {{ range .Params.research_interests }}<span>{{ . }}</span>{{ end }}
+          </div>
+        </section>
+
+        <section class="academic-profile__section" aria-labelledby="work-heading">
+          <div class="academic-profile__section-heading">
+            <p>02</p>
+            <h2 id="work-heading">研究与项目 <span>Selected Work</span></h2>
+          </div>
+          <div class="academic-profile__work-list">
+            {{ range .Params.current_work }}
+              {{ $work := . }}
+              <article class="academic-profile__work-item">
+                <div class="academic-profile__work-title">
+                  <h3>
+                    {{ with .url }}
+                      <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $work.title }} ↗</a>
+                    {{ else }}
+                      {{ .title }}
+                    {{ end }}
+                  </h3>
+                  <p>{{ .meta }}</p>
+                </div>
+                <p>{{ .description }}</p>
+                <ul aria-label="项目关键词">
+                  {{ range .keywords }}<li>{{ . }}</li>{{ end }}
+                </ul>
+              </article>
+            {{ end }}
+          </div>
+        </section>
+
+        <section class="academic-profile__section" aria-labelledby="education-heading">
+          <div class="academic-profile__section-heading">
+            <p>03</p>
+            <h2 id="education-heading">教育背景 <span>Education</span></h2>
+          </div>
+          {{ range .Params.education }}
+            <div class="academic-profile__education">
+              <div>
+                <h3>{{ .school }}</h3>
+                <p>{{ .degree }}</p>
+                <small>{{ .detail }}</small>
+              </div>
+              <time>{{ .period }}</time>
+            </div>
+          {{ end }}
+        </section>
+      </div>
+
+      <aside class="academic-profile__aside" aria-label="技能与兴趣">
+        <section>
+          <p class="academic-profile__aside-label">Toolkit</p>
+          <h2>技能</h2>
+          {{ range .Params.skill_groups }}
+            <div class="academic-profile__skill-group">
+              <h3>{{ .label }}</h3>
+              <p>{{ delimit .items " · " }}</p>
+            </div>
+          {{ end }}
+        </section>
+        <section>
+          <p class="academic-profile__aside-label">Beyond Research</p>
+          <h2>研究之外</h2>
+          <p>{{ delimit .Params.beyond " · " }}</p>
+        </section>
+      </aside>
+    </div>
+  </article>
+{{ end }}
